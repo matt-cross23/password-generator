@@ -10,6 +10,7 @@ var passwordLength;
 // console.log ("This a test for the array " + lowercaseLetters.length); 
 
 passwordLength = true
+
 function writePassword (){
 passwordLength = prompt("Please input the number of characters for your password(8 < X > 128");
 {if (passwordLength) {passwordLength < 8 || passwordLength > 128};
@@ -24,12 +25,16 @@ var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
 // Password Criteria
+  
 var confirmUpper = confirm("Press okay to include uppercase letters");
 var confirmLower = confirm("Press okay to include lowercase letters");
 var confirmNumber = confirm("Press okay to include numbers");
 var confirmSpecial = confirm("Press okay to include special characters");
 
 // Generate Criteria based on user
+// Empty Array for User's input
+
+var userInput = [];
  
   function passwordGenerator (){
   return Math.floor(Math.random(array.length) * 10
