@@ -5,24 +5,34 @@ var upperCaseLetters ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var specialCharacters = "!@#$%^&*()_+[]{};:";
 var Numbers = "0123456789";
 var writePassword = 8;
+var passwordLength;
 // console.log ("This a test for the array " + lowercaseLetters.length); 
+passwordLength = prompt("Please input the number of characters for your password(8 < X > 128)");
 function writePassword () {
-    result = window.prompt("Please input the number of characters for your password(8 < X > 128)");
 }
-writePassword = true;
-if (writePassword) {writePassword < 8 || writePassword > 128};
+
+
+if (passwordLength) {passwordLength < 8 || passwordLength > 128};
+else { console.log(Incorrect Value)}
+
 // Write password to the #password input needs a prompt function
 function writePassword() { 
 var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+var passwordText = document.querySelector("#password");
   passwordText.value = password;
 // console.log("Hello")
 }
 function passwordGenerator ()
+// Password Criteria
+var confirmUpper = confirm("Press okay to include uppercase letters");
+var confirmLower = confirm("Press okay to include lowercase letters");
+var confirmNumber = confirm("Press okay to include numbers");
+var confirmSpecial = confirm("Press okay to include special characters");
 
  
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+document.getElementbyId("password")
 
 
 // GIVEN I need a new, secure password
