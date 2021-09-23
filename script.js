@@ -1,4 +1,3 @@
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
 var lowercaseLetters = [
   "a",
@@ -76,20 +75,17 @@ var specialCharacters = [
   ";",
   ":",
 ];
-var Numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var criteria = [];
 var chosenCharacters = [];
 
-// console.log ("This a test for the array " + lowercaseLetters.length);
-passwordLength = true;
-
 function generatePassword() {
   passwordLength = prompt(
-    "Please input the number of characters for your password(8 < X > 128"
+    "Please input the number of characters for your password (8 < X < 128)"
   );
   while (passwordLength < 8 || passwordLength > 128) {
     passwordLength = prompt(
-      "Please input the number of characters for your password(8 < X > 128"
+      "Please input the number of characters for your password(8 < X < 128)"
     );
   }
   var confirmUpper = confirm("Press okay to include uppercase letters");
@@ -103,19 +99,19 @@ function generatePassword() {
     chosenCharacters = chosenCharacters.concat(lowercaseLetters);
   }
   if (confirmNumber === true) {
-    chosenCharacters = chosenCharacters.concat(Numbers);
+    chosenCharacters = chosenCharacters.concat(numbers);
   }
   if (confirmSpecial === true) {
     chosenCharacters = chosenCharacters.concat(specialCharacters);
   }
-  var password = ''
+  var password = "";
   for (var i = 0; i < passwordLength; i++) {
-    password+=chosenCharacters[ Math.floor(Math.random() * chosenCharacters.length)]
+    password +=
+      chosenCharacters[Math.floor(Math.random() * chosenCharacters.length)];
   }
-  alert("Your password is" + (password) + " !!!")
-  return (password);
+  alert("Your password is " + password);
+  return password;
 }
-
 
 function writePassword() {
   var password = generatePassword();
@@ -123,10 +119,4 @@ function writePassword() {
   passwordText.value = password;
 }
 
-
-
-// Add event listener to generate button
-
 generateBtn.addEventListener("click", writePassword);
-
-
