@@ -112,7 +112,7 @@ function generatePassword() {
   for (var i = 0; i < passwordLength; i++) {
     password+=chosenCharacters[ Math.floor(Math.random() * chosenCharacters.length)]
   }
-  alert("Your password is" + (password) + "!!!")
+  alert("Your password is" + (password) + " !!!")
   return (password);
 }
 
